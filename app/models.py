@@ -5,15 +5,7 @@ import uuid
 
 
 class CustomUser(AbstractUser): 
-    name = None
-    email = models.EmailField(unique=True)
     profile = models.ManyToManyField('Profile',blank=True)
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username',]
-
-    def __str__(self):
-        return self.email
-
     
 AGE_CHOICES = (
     ('All','All'),
