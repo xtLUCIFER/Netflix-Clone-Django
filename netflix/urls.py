@@ -23,8 +23,11 @@ from app.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',Home),
-    path('profile/',ProfileList),
-    path('create/',ProfileCreate),
+    path('profile/',ProfileList,name='profile'),
+    path('profile/create/',ProfileCreate,name="profile_create"),
+    path('watch/<str:profile_id>/',Watch,name="watch"),
+    path('movieDetail/<str:movie_id>/',ShowMovieDetail,name="movieDetail"),
+    path('moviePlay/<str:movie_id>/',ShowMovie,name="moviePlay"),
     path('accounts/', include('allauth.urls')),
 ]
 
