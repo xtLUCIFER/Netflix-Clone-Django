@@ -44,7 +44,7 @@ def Watch(request,profile_id):
     except Profile.DoesNotExist:
         return redirect('profile/')
 
-
+@login_required(login_url='account/login/')
 def ShowMovieDetail(request,movie_id):
     try:
         movie = Movie.objects.get(uuid=movie_id)
@@ -52,7 +52,7 @@ def ShowMovieDetail(request,movie_id):
     except Movie.DoesNotExist:
         return redirect('profile/')
 
-        
+@login_required(login_url='account/login/')
 def ShowMovie(request,movie_id):
     try:
         movie = Movie.objects.get(uuid=movie_id)
